@@ -21,7 +21,7 @@ const page = () => {
             have created this URL Shortener.
           </p>
           <div className="flex gap-3">
-            <Link href="/"><button className="bg-purple-400 p-2 py-1 font-bold rounded-lg cursor-pointer shadow-lg">Try Now</button></Link>
+            <Link href="/shorten"><button className="bg-purple-400 p-2 py-1 font-bold rounded-lg cursor-pointer shadow-lg">Try Now</button></Link>
             <Link href="/"><button className="bg-purple-400 p-2 py-1 font-bold rounded-lg cursor-pointer shadow-lg">GitHub</button></Link>
           </div>
         </div>
