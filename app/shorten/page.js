@@ -26,11 +26,14 @@ const requestOptions = {
 fetch("http://localhost:3000/api/generate", requestOptions)
   .then((response) => response.json())
   .then((result) => {
-    console.log(result)
-    console.log();
+    if(!result.success)alert("url already exist")
+    else{
     seturl("")
     setshorturl("")
     setgenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`)
+  }
+    console.log(result)
+    console.log();
   })
   .catch((error) => console.error(error));
 }
@@ -57,7 +60,7 @@ fetch("http://localhost:3000/api/generate", requestOptions)
       <button onClick={generate}
       className="bg-purple-500 p-3 py-1 font-bold text-white 
       my-2 rounded-lg cursor-pointer shadow-lg">Generate</button>
-      {generated&&<div>{generated}</div>}
+      {generated&&<div><Link target="_blank"href={generated}>{generated}</Link></div>}
     </div>
   )
 }
